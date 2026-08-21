@@ -4,8 +4,13 @@ cask "cleanmymewp" do
 
   url "https://github.com/ExplodingCB/cleanmymewp/releases/download/v#{version}/CleanMyMewp-#{version}.zip"
   name "CleanMyMewp"
-  desc "Native macOS cleaner: junk, duplicates, large files, uninstaller, and disk map"
+  desc "Cleaner for junk, duplicates, large files, apps, and disk usage"
   homepage "https://github.com/ExplodingCB/cleanmymewp"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   depends_on macos: :sonoma
 
