@@ -2,13 +2,12 @@ cask "cleanmymewp" do
   version "0.4.1"
   sha256 "02301d172db393ac30e3d66d65750fa5de475dccedf614db7aafc1bf686031a3"
 
-  url "https://github.com/ExplodingCB/cleanmymewp/releases/download/v#{version}/CleanMyMewp-#{version}.zip",
-      verified: "github.com/ExplodingCB/cleanmymewp/"
+  url "https://github.com/ExplodingCB/cleanmymewp/releases/download/v#{version}/CleanMyMewp-#{version}.zip"
   name "CleanMyMewp"
   desc "Native macOS cleaner: junk, duplicates, large files, uninstaller, and disk map"
   homepage "https://github.com/ExplodingCB/cleanmymewp"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "CleanMyMewp.app"
 
