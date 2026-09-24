@@ -1,6 +1,6 @@
 cask "tv-remote" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "1.0.0"
+  sha256 "ce5b604d2c9fc04e16bd31827fff815bb9b04f2f0f8f89a1e7e44050d445b777"
 
   url "https://github.com/ExplodingCB/tv-remote/releases/download/v#{version}/TV-Remote-#{version}.zip"
   name "TV Remote"
