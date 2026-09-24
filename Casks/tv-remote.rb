@@ -12,18 +12,19 @@ cask "tv-remote" do
     strategy :github_latest
   end
 
-  depends_on macos: :sequoia
   # Sets up the private Python environment that runs pyatv on first launch.
   depends_on formula: "uv"
+  depends_on macos: :sequoia
 
   app "TV Remote.app"
 
   # The app is ad-hoc signed (no paid Apple Developer account), so it is not notarized.
   # Clear the quarantine flag Homebrew's download picked up, or macOS refuses to open it.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TV Remote.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/TV Remote.app"],
+        writable_paths: ["TV Remote.app"],
+        writable_base:  :appdir
   end
 
   uninstall quit: "com.chaseculbertson.tvremote"
