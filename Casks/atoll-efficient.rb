@@ -9,6 +9,7 @@ cask "atoll-efficient" do
 
   livecheck do
     url :url
+    regex(/^v?(\d+(?:\.\d+)+-e\d+)$/i)
     strategy :github_latest
   end
 
