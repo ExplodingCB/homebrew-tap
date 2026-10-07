@@ -38,3 +38,21 @@ and use `brew uninstall --zap --cask tv-remote` to also delete its settings and 
 Like CleanMyMewp, the app is ad-hoc signed rather than notarized, so the cask clears the
 quarantine flag in a `postflight` step. It depends on `uv`, which it uses to set up
 [pyatv](https://pyatv.dev) on first launch.
+
+## Atoll Efficient
+
+An unofficial fork of the [Atoll](https://github.com/Ebullioscopic/Atoll) notch app that keeps the
+music controls, HUD and lock screen widgets without the battery drain or the memory spikes. Apple
+silicon, macOS 14.6 or later — [source](https://github.com/ExplodingCB/atoll-efficient).
+
+```sh
+brew install --cask explodingcb/tap/atoll-efficient
+```
+
+Upgrade with `brew upgrade --cask atoll-efficient`, remove with `brew uninstall --cask atoll-efficient`,
+and use `brew uninstall --zap --cask atoll-efficient` to also delete its preferences and caches.
+
+The app is ad-hoc signed rather than notarized, so the cask clears the quarantine flag in a
+`postflight_steps` step. Quit upstream Atoll before opening it, and expect macOS to ask for
+Bluetooth and Accessibility access again after each upgrade. Answer the Bluetooth prompt at launch
+before expecting the notch to appear.
